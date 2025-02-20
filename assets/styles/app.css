@@ -1,0 +1,29 @@
+.light-grey-row {
+    background: #dedede;
+    padding: 40px 0;
+}
+
+.dark-grey-row {
+    background: #f7f7f7;
+    padding: 40px 0;
+}
+
+.loading-modal-backdrop {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000007a;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.loading-modal-dialog {
+    background: #fff;
+    border-radius: 8px;
+    width: 300px;
+    padding: 30px;
+    text-align: center;
+}

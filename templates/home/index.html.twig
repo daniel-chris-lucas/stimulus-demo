@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" data-controller="loading alert">
+        <!-- Exemple 1 -->
+        <div class="row light-grey-row mt-5">
+            <div class="col-6 offset-3">
+                <div data-controller="todo">
+                    <form data-action="todo#add">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Nom de l'activité" data-todo-target="input">
+                            <button type="submit" class="btn btn-primary">Ajouter</button>
+                        </div>
+                    </form>
+                    <ul data-todo-target="list"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemple 2 -->
+        <div class="row dark-grey-row mt-5">
+            <div class="col-6 offset-3">
+                <div data-controller="pokemon"
+                     data-pokemon-offset-value="0"
+                     data-action="pokemon:loading->loading#open pokemon:loaded->loading#close">
+                    <div class="text-center" data-pokemon-target="actions">
+                        <button class="btn btn-primary"
+                                data-action="alert#displayMessage pokemon#load"
+                                data-alert-message-param="La liste des Pokémons sera bientôt chargé !">
+                            Charger
+                        </button>
+                    </div>
+                    <div data-pokemon-target="results"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemple 3 -->
+        <div class="row light-grey-row mt-5">
+            <div class="col-6 offset-3">
+                <div class="input-group" data-controller="datepicker">
+                    <input type="text" class="form-control" placeholder="Date" data-datepicker-target="input">
+                    <div class="input-group-text">
+                        <i class="bi bi-calendar-date"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-modal d-none" data-loading-target="modal">
+            <div class="loading-modal-backdrop">
+                <div class="loading-modal-dialog">
+                    <div class="spinner-grow spinner-grow-sm text-primary"></div>
+                    Chargement en cours...
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
